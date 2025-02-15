@@ -1,4 +1,4 @@
-import { Song } from "./songsData";
+import { Song, songs } from "./songsData";
 
 export const areSameSong = (song: Song, songTitle: string): boolean => {
   let areSame: boolean;
@@ -50,7 +50,7 @@ export const removeSongByPosition = (songs: Song[], position: number): void => {
 };
 
 export const setCurrentSong = (song: Song): void => {
-  // Establece la canción recibida como canción actual
+  song.isCurrent = true;
 };
 
 export const getNextSongPosition = (
