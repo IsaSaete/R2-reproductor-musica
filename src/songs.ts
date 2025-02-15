@@ -13,10 +13,9 @@ export const addSong = (song: Song, songs: Song[]): void => {
 
 export const isPlaylistFull = (songs: Song[]): boolean => {
   let isFull: boolean;
+  isFull = songs.length >= 4;
   // Asígnale a la variable isFull un true o un false dependiendo de si
   // el array de títulos recibido tiene 4 o más elementos
-
-  isFull = false; // Cambia esta línea por tu código
 
   return isFull;
 };
@@ -58,10 +57,9 @@ export const getNextSongPosition = (
   currentSongPosition: number
 ) => {
   let nextSongPosition: number;
+  nextSongPosition = currentSongPosition + 1;
   if (currentSongPosition === songs.length - 1) {
     nextSongPosition = 0;
-  } else {
-    nextSongPosition = currentSongPosition + 1;
   }
 
   return nextSongPosition;
@@ -69,10 +67,8 @@ export const getNextSongPosition = (
 
 export const isCurrentSong = (song: Song): boolean => {
   let isCurrent: boolean;
-  // Asígnale a la variable isCurrent un true o un false dependiendo de si
-  // la canción recibida es la actual
 
-  isCurrent = false; // Cambia esta línea por tu código
+  isCurrent = song.isCurrent !== true;
 
   return isCurrent;
 };
